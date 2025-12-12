@@ -1,0 +1,1320 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Darul Fikri Digital </title>
+
+    <!-- Fonts, Bootstrap, Icons, AOS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&family=Scheherazade+New:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <meta name="description"
+        content="Darul Fikri Digital - Pesantren modern penggabungan ilmu agama dan keterampilan digital.">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Penerimaan Mahasantri Baru 2026 - Darul Fikri Digital">
+    <meta property="og:description"
+        content="Mencetak Generasi Digital Berkarakter Qurani — kurikulum agama + programming + kewirausahaan.">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=900&auto=format&fit=crop">
+    <meta property="og:url" content="https://darulfikridigital.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="web.ico">
+
+    <style>
+        :root {
+            --emerald: #0F8A5F;
+            --dark-forest: #0C3B2E;
+            --light-mint: #C8F4DA;
+            --gold: #E5C964;
+            --white: #F8FFFA;
+            --muted: #6c757d;
+            --shadow-light: rgba(12, 59, 46, 0.08);
+            --shadow-medium: rgba(12, 59, 46, 0.15);
+            --shadow-heavy: rgba(12, 59, 46, 0.25);
+            --gradient-primary: linear-gradient(135deg, var(--emerald), var(--dark-forest));
+            --gradient-secondary: linear-gradient(135deg, var(--light-mint), var(--emerald));
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html,
+        body {
+            height: 100%;
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--dark-forest);
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .arabic {
+            font-family: 'Scheherazade New', serif
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8));
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px var(--shadow-light);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 30px var(--shadow-medium);
+        }
+
+        .brand-mark {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: var(--gradient-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brand-mark::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .brand-mark:hover::before {
+            transform: translateX(100%);
+        }
+
+        .brand-mark:hover {
+            transform: scale(1.08) rotate(5deg);
+            box-shadow: 0 8px 25px rgba(33, 107, 19, 0.4);
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+        }
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            padding: 100px 0 120px;
+            background: linear-gradient(135deg, var(--emerald), var(--dark-forest));
+            color: var(--white);
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1585036156171-384164a8c675?q=80&w=1200&auto=format&fit=crop') center/cover;
+            opacity: 0.08;
+            animation: subtle-zoom 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes subtle-zoom {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.05);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero .lead {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.2rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero .btn {
+            animation: fadeInUp 1s ease-out 0.4s both;
+            box-shadow: 0 4px 15px rgba(15, 138, 95, 0.3);
+        }
+
+        .hero .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(15, 138, 95, 0.4);
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .hero-stats {
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .hero-stats .stat {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1rem;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .hero-stats .stat:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .hero-stats .stat h4 {
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .hero-stats .stat small {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            opacity: 0.9;
+            z-index: 1;
+        }
+
+        .wave svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* CARDS */
+        .card-custom {
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(12, 59, 46, 0.08);
+            border: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer
+        }
+
+        .card-custom:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(12, 59, 46, 0.15)
+        }
+
+        .icon-circle {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--emerald), var(--light-mint));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin: 0 auto 12px;
+            font-size: 1.5rem;
+            transition: transform 0.5s ease
+        }
+
+        .icon-circle.rotate {
+            transform: rotate(360deg)
+        }
+
+        /* STEPS */
+        .step {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, var(--white), #f1fdf1);
+            border: 3px solid var(--emerald);
+            font-weight: 700;
+            color: var(--dark-forest);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer
+        }
+
+        .step:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(15, 138, 95, 0.3)
+        }
+
+        /* FAQ / ACCORDION */
+        .accordion-button {
+            background: var(--light-mint);
+            color: var(--dark-forest);
+            border-radius: 10px
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: var(--emerald);
+            color: var(--white)
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(180deg, #082418, #0c3b2e);
+            color: #fff
+        }
+
+        /* Smooth animation helpers */
+        .fade-up {
+            transform: translateY(25px);
+            opacity: 0;
+            transition: all .6s ease
+        }
+
+        .in-view {
+            transform: none;
+            opacity: 1
+        }
+
+        /* Form */
+        .was-validated .form-control:invalid {
+            border-color: #dc3545
+        }
+
+        /* Print helpers */
+        @media print {
+            body {
+                color: black;
+                background: white
+            }
+
+            .no-print {
+                display: none !important
+            }
+
+            .print-only {
+                display: block !important
+            }
+        }
+
+        /* Special page-like wrappers for brosur/poster print windows */
+        .print-wrapper {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-forest)
+        }
+
+        .brosur-card {
+            border: 10px solid var(--emerald);
+            padding: 18px;
+            border-radius: 8px
+        }
+
+        .poster-portrait {
+            width: 210mm;
+            height: 297mm;
+            padding: 28mm;
+            background: linear-gradient(180deg, var(--emerald), var(--dark-forest));
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center
+        }
+
+        /* GALERI KEGIATAN */
+        #galeri .card-img-top {
+            height: 250px;
+            object-fit: cover;
+        }
+
+        /* PENGAJAR */
+        #pengajar .card-custom {
+            min-height: 350px;
+        }
+
+        /* Responsive */
+        @media (max-width:768px) {
+            .hero {
+                padding: 40px 0
+            }
+
+            .hero h1 {
+                font-size: 1.8rem
+            }
+
+            .icon-circle {
+                width: 64px;
+                height: 64px
+            }
+        }
+
+        /* Preloader Animation */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PRELOADER -->
+    <div id="preloader"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--white); z-index: 9999; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center;">
+            <div
+                style="width: 60px; height: 60px; border: 4px solid var(--light-mint); border-top: 4px solid var(--emerald); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 20px;">
+            </div>
+            <h5 style="color: var(--dark-forest); font-family: 'Poppins', sans-serif;">Memuat...</h5>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm py-3 sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+                <div class="brand-mark">
+                    <img src="web.ico" alt="" width="50" height="50">
+                </div>
+                <div>
+                    <div class="fw-bold">Darul Fikri Digital</div>
+                    <small class="text-muted">Pesantren & Pendidikan Digital</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#tentang"
+                            style="transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#program"
+                            style="transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Program</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#fasilitas"
+                            style="transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Fasilitas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pengajar.html"
+                            style="transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Pengajar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#alur"
+                            style="transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Alur</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#daftar"
+                            style="transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Daftar</a></li>
+                    <li class="nav-item ms-3 no-print">
+                        <a class="btn btn-outline-success" href="#brosur-section"
+                            style="transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Brosur</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero d-flex align-items-center" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 hero-content" data-aos="fade-right">
+                    <h1 class="display-5 fw-bold">Penerimaan Mahasantri Baru 2026</h1>
+                    <p class="lead">Mencetak Generasi Digital Berkarakter Qurani — kurikulum agama + programming +
+                        kewirausahaan.</p>
+
+                    <div class="mt-4 d-flex gap-3 flex-wrap">
+                        <a href="#daftar" class="btn btn-primary btn-lg shadow-sm"
+                            style="transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Daftar Sekarang</a>
+                        <a href="#program" class="btn btn-light btn-lg"
+                            style="transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Program Studi</a>
+                        <a class="btn btn-light btn-lg" id="lihatBrosur"
+                            style="transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Lihat Brosur</a>
+                    </div>
+
+                    <div class="mt-5 hero-stats d-flex gap-4 flex-wrap" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat text-center">
+                            <h4 class="mb-0">500+</h4>
+                            <small class="text-muted">Alumni</small>
+                        </div>
+                        <div class="stat text-center">
+                            <h4 class="mb-0">4</h4>
+                            <small class="text-muted">Program Unggulan</small>
+                        </div>
+                        <div class="stat text-center">
+                            <h4 class="mb-0">Beasiswa 100%</h4>
+                            <small class="text-muted">Full beasiswa bagi <br>
+                                mahasantri</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-5 text-center" data-aos="fade-left">
+                    <div class="hero-card p-4 shadow-sm rounded-4">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=900&auto=format&fit=crop"
+                            alt="Santri Belajar" class="img-fluid rounded-3 mb-3">
+                        <p class="small text-muted">Gabungan pembelajaran tatap muka & digital learning dengan
+                            pendampingan spiritual.</p>
+                        <a class="btn btn-outline-success w-100" href="#daftar"
+                            style="transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Daftar Sekarang</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </header>
+
+    <!-- TENTANG -->
+    <section id="tentang" class="py-8" style="margin-top: 100px;">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Tentang Darul Fikri Digital</h2>
+                <p class="text-muted">Pesantren modern yang menggabungkan pendidikan agama dan keterampilan digital</p>
+            </div>
+
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <p class="lead">Darul Fikri Digital adalah lembaga pendidikan Islam inovatif yang memadukan
+                        kurikulum agama (Tahfidz, Fiqh, Bahasa Arab) dengan keterampilan digital (programming, desain,
+                        dan kewirausahaan).</p>
+                    <div class="mt-4 d-flex gap-3">
+                        <a href="#program" class="btn btn-outline-success"
+                            style="transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Lihat Program</a>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="card-custom p-3 text-center">
+                                    <i class="bi bi-laptop fs-2"></i>
+                                    <h6 class="mt-2">Pembelajaran Digital</h6>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-custom p-3 text-center">
+                                    <i class="bi bi-book fs-2"></i>
+                                    <h6 class="mt-2">Tahfidz & Keagamaan</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- PROGRAM -->
+    <section id="program" class="py-8 bg-light" style="margin-top: 100px;">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Program Studi Unggulan</h2>
+                <p class="text-muted">Kurikulum komprehensif untuk masa depan digital</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card-custom text-center p-4">
+                        <div class="icon-circle"><i class="bi bi-code-slash"></i></div>
+                        <h6>Kelas Programming</h6>
+                        <p>Belajar coding, web development, dan aplikasi mobile</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card-custom text-center p-4">
+                        <div class="icon-circle"><i class="bi bi-palette"></i></div>
+                        <h6>Kelas Desain Grafis</h6>
+                        <p>UI/UX design, branding, dan multimedia</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="card-custom text-center p-4">
+                        <div class="icon-circle"><i class="bi bi-graph-up"></i></div>
+                        <h6>Kelas Bisnis Digital</h6>
+                        <p>Digital marketing, e-commerce, entrepreneurship</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="card-custom text-center p-4">
+                        <div class="icon-circle"><i class="bi bi-book"></i></div>
+                        <h6>Tahfidz & Keagamaan</h6>
+                        <p>Pendidikan Al-Quran dan ilmu agama mendalam</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FASILITAS -->
+    <section id="fasilitas" class="py-8" style="margin-top: 100px;">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Fasilitas Pesantren</h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <a href="asrama.html" style="text-decoration: none; color: inherit;">
+                        <div class="card-custom">
+                            <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800&auto=format&fit=crop"
+                                alt="Asrama" class="card-img-top rounded-top">
+                            <div class="card-body text-center">
+                                <h6>Asrama Modern</h6>
+                                <p>Kamar nyaman dengan fasilitas lengkap</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <a href="lab-digital.html" style="text-decoration: none; color: inherit;">
+                        <div class="card-custom">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop"
+                                alt="Lab Komputer" class="card-img-top rounded-top">
+                            <div class="card-body text-center">
+                                <h6>Lab Digital</h6>
+                                <p>Ruang komputer dan studio multimedia</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <a href="masjid-besar.html" style="text-decoration: none; color: inherit;">
+                        <div class="card-custom">
+                            <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=800&auto=format&fit=crop"
+                                alt="Masjid" class="card-img-top rounded-top">
+                            <div class="card-body text-center">
+                                <h6>Masjid Besar</h6>
+                                <p>Tempat ibadah yang megah dan nyaman</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALUR PENDAFTARAN -->
+    <section id="alur" class="py-8 bg-light" style="margin-top: 100px;">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Alur Pendaftaran</h2>
+                <p class="text-muted">Proses pendaftaran yang mudah dan transparan</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-auto text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step">1</div>
+                    <h6 class="mt-2">Daftar Online</h6>
+                </div>
+                <div class="col-auto text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step">2</div>
+                    <h6 class="mt-2">Verifikasi</h6>
+                </div>
+                <div class="col-auto text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step">3</div>
+                    <h6 class="mt-2">Tes Online</h6>
+                </div>
+                <div class="col-auto text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step">4</div>
+                    <h6 class="mt-2">Wawancara</h6>
+                </div>
+                <div class="col-auto text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="step">5</div>
+                    <h6 class="mt-2">Pengumuman</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONI -->
+    <section class="py-8" style="margin-top: 100px;">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Testimoni Santri</h2>
+            </div>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card-custom text-center p-4">
+                            <p>"Pesantren ini mengubah hidup saya. Saya belajar coding sambil mendalami agama."</p>
+                            <cite>- Ahmad, Alumni 2023</cite>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card-custom text-center p-4">
+                            <p>"Fasilitas lengkap dan pengajar yang kompeten. Recommended!"</p>
+                            <cite>- Rafi, Alumni 2023</cite>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPACER SECTION -->
+    <section class="py-8">
+        <div class="container">
+            <!-- Empty spacer section for better visual separation -->
+        </div>
+    </section>
+
+
+    <!-- FAQ + SYARAT -->
+    <section class="py-8 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h4>FAQ</h4>
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">Berapa biaya pendaftaran?</button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Tidak ada biaya pendaftaran, semua ditanggung yayasan.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2">Apakah ada beasiswa?</button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Ya, Mahasantri berprestasi mendapat beasiswa penuh + uang
+                                    saku.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3">Berapa lama masa pendidikan?</button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Masa pendidikan selama 3 tahun dengan kurikulum
+                                    terintegrasi.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq4">Apakah ada fasilitas kesehatan?</button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Ya, tersedia klinik kesehatan 24 jam dengan dokter dan
+                                    perawat profesional.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h4>Syarat & Ketentuan</h4>
+                    <ul>
+                        <li>Usia 17-25 tahun</li>
+                        <li>Lulusan SMA/SMK/Sederajat</li>
+                        <li>Sehat jasmani dan rohani</li>
+                        <li>Berperilaku baik</li>
+                        <li>Mampu membaca Al-Quran</li>
+                        <li>Bersedia mengikuti aturan pesantren</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPACER SECTION -->
+    <section class="py-8">
+        <div class="container">
+            <!-- Empty spacer section for better visual separation -->
+        </div>
+    </section>
+
+    <!-- VISI DAN MISI -->
+    <section id="visi-misi" class="py-8">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Visi & Misi</h2>
+                <p class="text-muted">Komitmen kami dalam mencetak generasi unggul</p>
+            </div>
+
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="card-custom p-4">
+                        <h4 class="text-success mb-3">Visi</h4>
+                        <p class="lead">Menjadi pusat pendidikan Islam terdepan yang mengintegrasikan ilmu agama dan
+                            teknologi digital untuk mencetak generasi Qurani yang siap menghadapi tantangan global.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="card-custom p-4">
+                        <h4 class="text-success mb-3">Misi</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Menyelenggarakan
+                                pendidikan Tahfidz Al-Quran yang berkualitas</li>
+                            <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Mengembangkan
+                                keterampilan digital melalui program programming dan desain</li>
+                            <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Membentuk karakter
+                                islami yang kuat dan etos kerja tinggi</li>
+                            <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Mendorong inovasi
+                                dan kewirausahaan di bidang digital</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPACER SECTION -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Empty spacer section for better visual separation -->
+        </div>
+    </section>
+
+    <!-- PRESTASI SANTRI -->
+    <section class="py-8 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Prestasi Santri</h2>
+                <p class="text-muted">Pencapaian luar biasa mahasantri kami</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card-custom text-center p-4">
+                        <div class="icon-circle"><i class="bi bi-trophy"></i></div>
+                        <h6>Juara Nasional Tahfidz</h6>
+                        <p>3 mahasantri meraih juara dalam kompetisi tahfidz tingkat nasional</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card-custom text-center p-4">
+                        <div class="icon-circle"><i class="bi bi-code-slash"></i></div>
+                        <h6>Developer Award</h6>
+                        <p>Aplikasi mobile buatan santri mendapat penghargaan nasional</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="card-custom text-center p-4">
+                        <div class="icon-circle"><i class="bi bi-briefcase"></i></div>
+                        <h6>Startup Success</h6>
+                        <p>5 startup digital santri berhasil mendapatkan pendanaan venture capital</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPACER SECTION -->
+    <section class="py-7">
+        <div class="container">
+            <!-- Empty spacer section for better visual separation -->
+        </div>
+    </section>
+    <!-- SPACER SECTION -->
+    <section class="py-4">
+        <div class="container">
+            <!-- Empty spacer section for better visual separation -->
+        </div>
+    </section>
+
+    <!-- GALERI KEGIATAN -->
+    <section id="galeri" class="py-8">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Galeri Kegiatan</h2>
+                <p class="text-muted">Aktivitas sehari-hari di Darul Fikri Digital</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-custom">
+                        <img src="kelasprgmg.png" alt="Kegiatan Belajar" class="card-img-top rounded-top">
+                        <div class="card-body text-center">
+                            <h6>Kelas Programming</h6>
+                            <p>Santri belajar coding dengan mentor profesional</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-custom">
+                        <img src="thfdz.png" alt="Tahfidz" class="card-img-top rounded-top">
+                        <div class="card-body text-center">
+                            <h6>Tahfidz Al-Quran</h6>
+                            <p>Pembelajaran Al-Quran dengan metode modern</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-custom">
+                        <img src="olhrga.png" alt="Kegiatan Olahraga" class="card-img-top rounded-top">
+                        <div class="card-body text-center">
+                            <h6>Olahraga & Kesehatan</h6>
+                            <p>Menjaga kebugaran jasmani dan rohani</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPACER SECTION -->
+    <section class="py-4">
+        <div class="container">
+            <!-- Empty spacer section for better visual separation -->
+        </div>
+    </section>
+
+    <!-- PENGAJAR -->
+    <section id="pengajar" class="py-8 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Pengajar Profesional</h2>
+                <p class="text-muted">Tim pengajar berpengalaman dan kompeten</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <a href="ustadz-ahmad.html" style="text-decoration: none; color: inherit;">
+                        <div class="card-custom text-center p-4">
+                            <img src="ahmd.png" alt="Ustadz Ahmad" class="rounded-circle mb-4"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <h6 class="mb-3">Ustadz Ahmad</h6>
+                            <p class="small text-muted mb-3">Kepala Tahfidz & Pengasuh</p>
+                            <p class="small">Pengalaman 15 tahun dalam bidang pendidikan Islam</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <a href="dr-siti-nurhaliza.html" style="text-decoration: none; color: inherit;">
+                        <div class="card-custom text-center p-4">
+                            <img src="sti.png" alt="Dr. Siti Nurhaliza" class="rounded-circle mb-4"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <h6 class="mb-3">Dr. Siti Nurhaliza</h6>
+                            <p class="small text-muted mb-3">Kepala Program Digital</p>
+                            <p class="small">PhD Computer Science, mantan engineer Google</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <a href="pak-budi-santoso.html" style="text-decoration: none; color: inherit;">
+                        <div class="card-custom text-center p-4">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop"
+                                alt="Pak Budi Santoso" class="rounded-circle mb-4"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <h6 class="mb-3">Pak Budi Santoso</h6>
+                            <p class="small text-muted mb-3">Mentor Kewirausahaan</p>
+                            <p class="small">Founder 3 startup sukses, investor teknologi</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPACER SECTION -->
+    <section class="py-4">
+        <div class="container">
+            <!-- Empty spacer section for better visual separation -->
+        </div>
+    </section>
+
+    <!-- FORM PENDAFTARAN -->
+    <section id="daftar" class="py-8">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <div class="card-custom p-4">
+                        <h3 class="mb-3 text-center">Form Pendaftaran</h3>
+                        <form id="formDaftar" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Nama Lengkap</label>
+                                    <input type="text" class="form-control" name="nama" required>
+                                    <div class="invalid-feedback">Nama harus diisi.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Tanggal Lahir</label>
+                                    <input type="date" class="form-control" name="tgl" required>
+                                    <div class="invalid-feedback">Tanggal lahir harus diisi.</div>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Alamat</label>
+                                    <textarea class="form-control" name="alamat" rows="3" required></textarea>
+                                    <div class="invalid-feedback">Alamat harus diisi.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email" required>
+                                    <div class="invalid-feedback">Email tidak valid.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">No. HP</label>
+                                    <input type="tel" class="form-control" name="hp" required>
+                                    <div class="invalid-feedback">Nomor HP harus diisi.</div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-success btn-lg"
+                                        style="transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">Kirim
+                                        Pendaftaran</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================= BROSUR PROFESIONAL ======================= -->
+    <section id="brosur-section" class="py-5 bg-light">
+        <div class="container">
+
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Brosur Resmi — Darul Fikri Digital</h2>
+                <p class="text-muted">Brosur resmi program pendidikan digital modern berbasis pesantren.</p>
+                <button class="btn btn-success" onclick="printSection('brosur-print')"
+                    style="transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+                    Cetak Brosur
+                </button>
+            </div>
+
+            <div id="brosur-print" class="brosur-card bg-white p-4 rounded shadow">
+
+                <div class="row">
+
+                    <!-- KIRI -->
+                    <div class="col-6 pe-4">
+                        <h3 class="fw-bold text-success">Darul Fikri Digital</h3>
+                        <p class="small text-muted">Pesantren Modern • Digital Skill • Tahfidz</p>
+
+                        <hr>
+
+                        <h5 class="fw-bold">Program Unggulan</h5>
+                        <ul>
+                            <li>Programming & Web Development</li>
+                            <li>Desain Grafis & UI/UX</li>
+                            <li>Digital Marketing & Bisnis Online</li>
+                            <li>Tahfidz Al-Qur’an</li>
+                        </ul>
+
+                        <h5 class="fw-bold mt-4">Fasilitas Pesantren</h5>
+                        <ul>
+                            <li>Asrama modern & nyaman</li>
+                            <li>Lab komputer & studio multimedia</li>
+                            <li>Masjid megah</li>
+                            <li>Lingkungan Islami & terarah</li>
+                        </ul>
+
+                        <h5 class="fw-bold mt-4">Keunggulan</h5>
+                        <p>
+                            ✓ Kurikulum agama + digital skill<br>
+                            ✓ Pendampingan mentor profesional<br>
+                            ✓ Beasiswa penuh untuk berprestasi<br>
+                            ✓ Sistem pembelajaran hybrid
+                        </p>
+                    </div>
+
+                    <!-- KANAN -->
+                    <div class="col-6 ps-4 border-start">
+                        <h5 class="fw-bold">Alur Pendaftaran</h5>
+                        <ol>
+                            <li>Daftar Online</li>
+                            <li>Verifikasi Berkas</li>
+                            <li>Tes Online</li>
+                            <li>Wawancara</li>
+                            <li>Pengumuman</li>
+                        </ol>
+
+                        <h5 class="fw-bold mt-4">Syarat Masuk</h5>
+                        <ul>
+                            <li>Usia 17–25 tahun</li>
+                            <li>Lulusan SMA/SMK/Sederajat</li>
+                            <li>Sehat jasmani & rohani</li>
+                            <li>Berperilaku baik</li>
+                        </ul>
+
+                        <h5 class="fw-bold mt-4">Kontak & Pendaftaran</h5>
+                        <p>
+                            Website: www.darulfikridigital.com<br>
+                            WA Admin: 088214486502<br>
+                            Lokasi: Kp. Talagaasem Desa Talagasari, Balaraja, Kab. Tangerang, Banten
+                        </p>
+
+                        <div class="text-center mt-4">
+                            <h3 class="fw-bold text-success">Penerimaan 2026</h3>
+                            <p class="small">Kuota terbatas — daftar sebelum penuh</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row gy-3">
+                <div class="col-md-4">
+                    <h5>Darul Fikri Digital</h5>
+                    <p class="small mb-0">Mencetak generasi digital yang berkarakter Qurani</p>
+                </div>
+                <div class="col-md-4">
+                    <h6>Kontak</h6>
+                    <p><strong>Email</strong><br>
+                        <a href="mailto:humas@darulfikri.com" style="color: inherit; text-decoration: none;">
+                            humas@darulfikri.com
+                        </a>
+                    </p>
+
+                    <p><strong>WhatsApp</strong><br>
+                        <a href="https://wa.me/6288214486502" style="color: inherit; text-decoration: none;">
+                            088214486502
+                        </a>
+                    </p>
+
+                </div>
+                <div class="col-md-4">
+                    <h6>Lokasi</h6>
+                    <div class="ratio ratio-16x9">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d609.4326927258387!2d106.4574274736048!3d-6.200604004640556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sid!2sid!4v1765523043189!5m2!1sid!2sid"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <small style="color:rgba(255,255,255,0.8)">&copy; 2025 Darul Fikri Digital. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        // AOS init
+        AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' });
+
+        // Hide preloader after page loads
+        window.addEventListener('load', function () {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.style.display = 'none';
+            }
+        });
+
+        // Smooth scroll for local links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); const bsCollapse = document.querySelector('.navbar-collapse'); if (bsCollapse && bsCollapse.classList.contains('show')) new bootstrap.Collapse(bsCollapse).hide(); }
+            });
+        });
+
+        // Form validation + fake submit
+        const form = document.getElementById('formDaftar');
+        if (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (!form.checkValidity()) {
+                    form.classList.add('was-validated');
+                    return;
+                }
+                const btn = form.querySelector('button[type="submit"]');
+                btn.setAttribute('disabled', '');
+                const orig = btn.innerText;
+                btn.innerText = 'Mengirim...';
+                setTimeout(() => {
+                    btn.innerText = 'Terkirim ✓';
+                    alert('Terima kasih! Pendaftaran Anda telah diterima (demo).');
+                    form.reset();
+                    btn.removeAttribute('disabled');
+                    btn.innerText = orig;
+                }, 1200);
+            });
+        }
+
+        // Print helpers: clone a section and open in new window to print cleanly
+        function printSection(id) {
+            const el = document.getElementById(id);
+            if (!el) return alert('Bagian cetak tidak ditemukan.');
+            const styles = Array.from(document.querySelectorAll('style, link[rel="stylesheet"]')).map(n => n.outerHTML).join('\\n');
+            const html = `
+        <!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Cetak - ${document.title}</title>
+        ${styles}
+        <style>
+          body{padding:18px;font-family: 'Poppins', sans-serif; color: #0c3b2e}
+          .brosur-print { max-width: 900px; margin: 0 auto; }
+          @media print{ @page { size: A4; margin: 18mm } }
+        </style>
+        </head><body>
+        <div class="brosur-print">${el.innerHTML}</div>
+        </body></html>
+      `;
+            const w = window.open('', '_blank');
+            w.document.open();
+            w.document.write(html);
+            w.document.close();
+            // Give time for images and fonts to load
+            setTimeout(() => { w.focus(); w.print(); }, 600);
+        }
+
+        // Open poster print (A4 portrait)
+        function openPosterPrint() {
+            const posterHtml = `
+        <!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Poster - Darul Fikri Digital</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+          @page{size:A4}
+          body{margin:0;padding:0}
+          .poster{width:210mm;height:297mm;display:flex;align-items:center;justify-content:center}
+          .poster-portrait{width:100%;height:100%;padding:28mm;background:linear-gradient(180deg,#0F8A5F,#0C3B2E);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Poppins',sans-serif}
+          h1{font-size:34px;margin:0 0 8px}
+          p{margin:0 0 12px}
+          .cta{margin-top:18px;background:#E5C964;color:#0C3B2E;padding:12px 18px;border-radius:8px;font-weight:700;text-decoration:none;display:inline-block}
+        </style>
+        </head><body>
+        <div class="poster"><div class="poster-portrait">
+          <div style="text-align:center">
+            <div style="background:rgba(255,255,255,0.06);display:inline-block;padding:10px 14px;border-radius:10px;margin-bottom:10px;font-weight:700">Darul Fikri Digital</div>
+            <h1>Penerimaan Mahasantri Baru 2025</h1>
+            <p style="font-size:18px">Gabungkan ilmu agama & keterampilan digital — Beasiswa penuh tersedia</p>
+            <div class="cta">Daftar Sekarang • 0812-3456-7890</div>
+            <div style="margin-top:14px;font-size:12px;opacity:0.9">info@pondokdigitalnusantara.com</div>
+          </div>
+        </div></div>
+        </body></html>
+      `;
+            const w = window.open('', '_blank');
+            w.document.open();
+            w.document.write(posterHtml);
+            w.document.close();
+            setTimeout(() => { w.focus(); w.print(); }, 700);
+        }
+
+        // Buttons that open brosur/poster previews
+        document.getElementById('lihatBrosur')?.addEventListener('click', () => { document.querySelector('#brosur-section')?.scrollIntoView({ behavior: 'smooth' }) });
+        document.getElementById('openPosterBtn')?.addEventListener('click', () => { document.querySelector('#brosur-section')?.scrollIntoView({ behavior: 'smooth' }); });
+
+        // Rotate logo on card click
+        document.querySelectorAll('.card-custom').forEach(card => {
+            card.addEventListener('click', function () {
+                const icon = this.querySelector('.icon-circle');
+                if (icon) {
+                    icon.classList.toggle('rotate');
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

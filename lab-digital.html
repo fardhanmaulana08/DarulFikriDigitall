@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lab Digital - Darul Fikri Digital</title>
+
+    <!-- Fonts, Bootstrap, Icons, AOS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&family=Scheherazade+New:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <meta name="description"
+        content="Lab Digital modern di Darul Fikri Digital dengan fasilitas komputer lengkap untuk pembelajaran programming dan desain.">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Lab Digital - Darul Fikri Digital">
+    <meta property="og:description"
+        content="Lab digital lengkap dengan komputer modern, software terkini, dan studio multimedia untuk pengembangan keterampilan digital.">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop">
+    <meta property="og:url" content="https://darulfikridigital.com/lab-digital">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="web.ico">
+
+    <style>
+        :root {
+            --emerald: #0F8A5F;
+            --dark-forest: #0C3B2E;
+            --light-mint: #C8F4DA;
+            --gold: #E5C964;
+            --white: #F8FFFA;
+            --muted: #6c757d;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--dark-forest);
+            scroll-behavior: smooth
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif
+        }
+
+        .arabic {
+            font-family: 'Scheherazade New', serif
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6));
+            backdrop-filter: blur(6px);
+            transition: all 0.3s ease
+        }
+
+        .brand-mark {
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--emerald), var(--dark-forest));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            cursor: pointer
+        }
+
+        .brand-mark:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(15, 138, 95, 0.3)
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--emerald), var(--dark-forest));
+            color: var(--white);
+            overflow: hidden
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop') center/cover;
+            opacity: 0.09
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 800
+        }
+
+        .hero .lead {
+            color: rgba(255, 255, 255, 0.92)
+        }
+
+        /* CARDS */
+        .card-custom {
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(12, 59, 46, 0.08);
+            border: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer
+        }
+
+        .card-custom:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(12, 59, 46, 0.15)
+        }
+
+        /* LAB PROFILE */
+        .lab-profile {
+            min-height: 60vh;
+        }
+
+        .lab-photo-large {
+            width: 100%;
+            height: 300px;
+            border-radius: 16px;
+            object-fit: cover;
+            margin: 0 auto 2rem;
+        }
+
+        .facility-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .facility-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(12, 59, 46, 0.1);
+        }
+
+        .facility-list li:last-child {
+            border-bottom: none;
+        }
+
+        .facility-list i {
+            color: var(--emerald);
+            margin-right: 0.5rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(180deg, #082418, #0c3b2e);
+            color: #fff
+        }
+
+        /* Responsive */
+        @media (max-width:768px) {
+            .hero {
+                padding: 40px 0
+            }
+
+            .hero h1 {
+                font-size: 1.8rem
+            }
+
+            .lab-photo-large {
+                height: 200px;
+            }
+        }
+
+        /* Preloader Animation */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .brand-mark {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: var(--gradient-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brand-mark::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .brand-mark:hover::before {
+            transform: translateX(100%);
+        }
+
+        .brand-mark:hover {
+            transform: scale(1.08) rotate(5deg);
+            box-shadow: 0 8px 25px rgba(15, 138, 95, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PRELOADER -->
+    <div id="preloader"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--white); z-index: 9999; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center;">
+            <div
+                style="width: 60px; height: 60px; border: 4px solid var(--light-mint); border-top: 4px solid var(--emerald); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 20px;">
+            </div>
+            <h5 style="color: var(--dark-forest); font-family: 'Poppins', sans-serif;">Memuat...</h5>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm py-3 sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="pmb.html">
+                <div class="brand-mark">
+                    <img src="web.ico" alt="" width="50" height="50">
+                </div>
+                <div>
+                    <div class="fw-bold">Darul Fikri Digital</div>
+                    <small class="text-muted">Pesantren & Pendidikan Digital</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item ms-3 no-print">
+                        <a class="btn btn-outline-primary" href="pmb.html">Kembali ke Beranda</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="pmb.html#tentang">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pmb.html#program">Program</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="pmb.html#fasilitas">Fasilitas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pengajar.html">Pengajar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pmb.html#daftar">Daftar</a></li>
+                    <li class="nav-item ms-3 no-print">
+                        <a class="btn btn-outline-success" href="pmb.html#brosur-section">Brosur</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero d-flex align-items-center" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 hero-content" data-aos="fade-right">
+                    <h1>Lab Digital</h1>
+                    <p class="lead">Ruang komputer modern dengan perangkat terkini untuk mengembangkan keterampilan
+                        digital mahasantri.</p>
+                </div>
+
+                <div class="col-lg-4 text-center" data-aos="fade-left">
+                    <div class="card-custom p-4 shadow-sm rounded-4">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=400&auto=format&fit=crop"
+                            alt="Lab Digital" class="img-fluid rounded-3 mb-3">
+                        <p class="small text-muted">Fasilitas lab digital lengkap dan modern</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- decorative wave -->
+        <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path fill="#0C3B2E"
+                d="M0,64L48,58.7C96,53,192,43,288,53.3C384,64,480,96,576,96C672,96,768,64,864,53.3C960,43,1056,53,1152,74.7C1248,96,1344,128,1392,144L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+            </path>
+        </svg>
+    </header>
+
+    <!-- LAB PROFILE -->
+    <section class="py-8">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center mb-4" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop"
+                        alt="Lab Digital" class="lab-photo-large">
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="card-custom p-4">
+                        <h4 class="mb-3">Tentang Lab Digital</h4>
+                        <p class="mb-4">
+                            Lab Digital Darul Fikri Digital dilengkapi dengan komputer modern dan software terkini untuk
+                            mendukung pembelajaran programming, desain grafis, dan multimedia. Setiap mahasantri
+                            mendapat akses penuh ke fasilitas ini selama masa pendidikan.
+                        </p>
+
+                        <h5 class="mt-4 mb-3">Perangkat Keras</h5>
+                        <ul class="facility-list">
+                            <li><i class="bi bi-check-circle-fill"></i>Komputer desktop high-end dengan prosesor terbaru
+                            </li>
+                            <li><i class="bi bi-check-circle-fill"></i>Layar monitor 24" full HD</li>
+                            <li><i class="bi bi-check-circle-fill"></i>RAM 16GB dan storage SSD 512GB</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Keyboard dan mouse ergonomis</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Printer dan scanner multifungsi</li>
+                            <li><i class="bi bi-check-circle-fill"></i>UPS untuk stabilitas listrik</li>
+                        </ul>
+
+                        <h5 class="mt-4 mb-3">Software & Tools</h5>
+                        <ul class="facility-list">
+                            <li><i class="bi bi-check-circle-fill"></i>Visual Studio Code, PyCharm, IntelliJ IDEA</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Adobe Creative Suite (Photoshop, Illustrator,
+                                Premiere)</li>
+                            <li><i class="bi bi-check-circle-fill"></i>AutoCAD dan software engineering</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Microsoft Office 365</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Git dan GitHub untuk version control</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Virtual machines untuk testing</li>
+                        </ul>
+
+                        <h5 class="mt-4 mb-3">Fasilitas Tambahan</h5>
+                        <div class="row g-2">
+                            <div class="col-auto">
+                                <span class="badge bg-success">WiFi cepat 100Mbps</span>
+                            </div>
+                            <div class="col-auto">
+                                <span class="badge bg-success">AC dan pencahayaan optimal</span>
+                            </div>
+                            <div class="col-auto">
+                                <span class="badge bg-success">Ruang diskusi collaborative</span>
+                            </div>
+                            <div class="col-auto">
+                                <span class="badge bg-success">Server lokal untuk development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row gy-3">
+                <div class="col-md-4">
+                    <h5>Darul Fikri Digital</h5>
+                    <p class="small mb-0">Mencetak generasi digital yang berkarakter Qurani</p>
+                </div>
+                <div class="col-md-4">
+                    <h6>Kontak</h6>
+                    <p><strong>Email</strong><br>
+                        <a href="mailto:humas@darulfikri.com" style="color: inherit; text-decoration: none;">
+                            humas@darulfikri.com
+                        </a>
+                    </p>
+
+                    <p><strong>WhatsApp</strong><br>
+                        <a href="https://wa.me/6288214486502" style="color: inherit; text-decoration: none;">
+                            088214486502
+                        </a>
+                    </p>
+
+                </div>
+                <div class="col-md-4">
+                    <h6>Lokasi</h6>
+                    <div class="ratio ratio-16x9">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d609.4326927258387!2d106.4574274736048!3d-6.200604004640556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sid!2sid!4v1765523043189!5m2!1sid!2sid"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <small style="color:rgba(255,255,255,0.8)">&copy; 2025 Darul Fikri Digital. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        // AOS init
+        AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' });
+
+        // Hide preloader after page loads
+        window.addEventListener('load', function () {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.style.display = 'none';
+            }
+        });
+
+        // Smooth scroll for local links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const bsCollapse = document.querySelector('.navbar-collapse');
+                    if (bsCollapse && bsCollapse.classList.contains('show')) new bootstrap.Collapse(bsCollapse).hide();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

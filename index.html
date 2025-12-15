@@ -445,6 +445,16 @@
          width: 100%;
          }
 
+        .step {
+         cursor: pointer;
+         transition: transform 0.2s ease;
+         }
+
+       .step:hover {
+        transform: scale(1.1);
+        }
+
+
     </style>
 </head>
 
@@ -685,39 +695,81 @@
         </div>
     </section>
 
-    <!-- ALUR PENDAFTARAN -->
-    <section id="alur" class="py-8 bg-light" style="margin-top: 100px;">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2>Alur Pendaftaran</h2>
-                <p class="text-muted">Proses pendaftaran yang mudah dan transparan</p>
-            </div>
+    <!-- STEP 1 -->
+<div class="modal fade" id="step1Modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Daftar Online</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Calon santri mengisi formulir pendaftaran online melalui website resmi dengan data yang valid dan lengkap.
+      </div>
+    </div>
+  </div>
+</div>
 
-            <div class="row g-4 justify-content-center">
-                <div class="col-auto text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="step">1</div>
-                    <h6 class="mt-2">Daftar Online</h6>
-                </div>
-                <div class="col-auto text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="step">2</div>
-                    <h6 class="mt-2">Verifikasi</h6>
-                </div>
-                <div class="col-auto text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="step">3</div>
-                    <h6 class="mt-2">Tes Online</h6>
-                </div>
-                <div class="col-auto text-center" data-aos="fade-up" data-aos-delay="400">
-                    <div class="step">4</div>
-                    <h6 class="mt-2">Wawancara</h6>
-                </div>
-                <div class="col-auto text-center" data-aos="fade-up" data-aos-delay="500">
-                    <div class="step">5</div>
-                    <h6 class="mt-2">Pengumuman</h6>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- STEP 2 -->
+<div class="modal fade" id="step2Modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Verifikasi Berkas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Tim admin akan memverifikasi data dan dokumen yang telah diunggah oleh calon santri.
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- STEP 3 -->
+<div class="modal fade" id="step3Modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Tes Online</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Peserta mengikuti tes akademik dan keislaman secara online sesuai jadwal yang ditentukan.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 4 -->
+<div class="modal fade" id="step4Modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Wawancara</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Wawancara dilakukan untuk mengenal karakter, motivasi, dan kesiapan calon santri.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 5 -->
+<div class="modal fade" id="step5Modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Pengumuman</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Hasil seleksi diumumkan melalui website dan/atau WhatsApp resmi pesantren.
+      </div>
+    </div>
+  </div>
+</div>
+    
     <!-- TESTIMONI -->
     <section class="py-8" style="margin-top: 100px;">
         <div class="container">
@@ -1326,6 +1378,7 @@
 
 
 </html>
+
 
 
 

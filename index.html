@@ -695,80 +695,32 @@
         </div>
     </section>
 
-    <!-- STEP 1 -->
-<div class="modal fade" id="step1Modal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Daftar Online</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        Calon santri mengisi formulir pendaftaran online melalui website resmi dengan data yang valid dan lengkap.
-      </div>
-    </div>
-  </div>
+<div class="col-auto text-center" data-aos="fade-up" data-aos-delay="100">
+    <div class="step" data-bs-toggle="offcanvas" data-bs-target="#step1">1</div>
+    <h6 class="mt-2">Daftar Online</h6>
 </div>
 
-<!-- STEP 2 -->
-<div class="modal fade" id="step2Modal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Verifikasi Berkas</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        Tim admin akan memverifikasi data dan dokumen yang telah diunggah oleh calon santri.
-      </div>
-    </div>
-  </div>
+<div class="col-auto text-center" data-aos="fade-up" data-aos-delay="200">
+    <div class="step" data-bs-toggle="offcanvas" data-bs-target="#step2">2</div>
+    <h6 class="mt-2">Verifikasi</h6>
 </div>
 
-<!-- STEP 3 -->
-<div class="modal fade" id="step3Modal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Tes Online</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        Peserta mengikuti tes akademik dan keislaman secara online sesuai jadwal yang ditentukan.
-      </div>
-    </div>
-  </div>
+<div class="col-auto text-center" data-aos="fade-up" data-aos-delay="300">
+    <div class="step" data-bs-toggle="offcanvas" data-bs-target="#step3">3</div>
+    <h6 class="mt-2">Tes Online</h6>
 </div>
 
-<!-- STEP 4 -->
-<div class="modal fade" id="step4Modal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Wawancara</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        Wawancara dilakukan untuk mengenal karakter, motivasi, dan kesiapan calon santri.
-      </div>
-    </div>
-  </div>
+<div class="col-auto text-center" data-aos="fade-up" data-aos-delay="400">
+    <div class="step" data-bs-toggle="offcanvas" data-bs-target="#step4">4</div>
+    <h6 class="mt-2">Wawancara</h6>
 </div>
 
-<!-- STEP 5 -->
-<div class="modal fade" id="step5Modal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Pengumuman</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        Hasil seleksi diumumkan melalui website dan/atau WhatsApp resmi pesantren.
-      </div>
-    </div>
-  </div>
+<div class="col-auto text-center" data-aos="fade-up" data-aos-delay="500">
+    <div class="step" data-bs-toggle="offcanvas" data-bs-target="#step5">5</div>
+    <h6 class="mt-2">Pengumuman</h6>
 </div>
+
+
     
     <!-- TESTIMONI -->
     <section class="py-8" style="margin-top: 100px;">
@@ -1374,10 +1326,67 @@
         });
 
     </script>
+
+    <!-- STEP 1 -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="step1">
+  <div class="offcanvas-header">
+    <h5>Daftar Online</h5>
+    <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    Calon santri mengisi formulir pendaftaran online melalui website resmi dengan data yang benar dan lengkap.
+  </div>
+</div>
+
+<!-- STEP 2 -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="step2">
+  <div class="offcanvas-header">
+    <h5>Verifikasi Berkas</h5>
+    <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    Admin memverifikasi data dan dokumen yang telah dikirim oleh calon santri.
+  </div>
+</div>
+
+<!-- STEP 3 -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="step3">
+  <div class="offcanvas-header">
+    <h5>Tes Online</h5>
+    <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    Peserta mengikuti tes akademik dan keislaman sesuai jadwal yang ditentukan.
+  </div>
+</div>
+
+<!-- STEP 4 -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="step4">
+  <div class="offcanvas-header">
+    <h5>Wawancara</h5>
+    <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    Wawancara dilakukan untuk menilai motivasi, adab, dan kesiapan calon santri.
+  </div>
+</div>
+
+<!-- STEP 5 -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="step5">
+  <div class="offcanvas-header">
+    <h5>Pengumuman</h5>
+    <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    Hasil seleksi diumumkan melalui website dan WhatsApp resmi pesantren.
+  </div>
+</div>
+
 </body>
 
 
 </html>
+
 
 
 
